@@ -603,7 +603,10 @@ def batch():
         "total":    metrics_store["total"],
     })
 
-
+@app.route("/")
+def index():
+    return jsonify({"status": "ok", "message": "Deep RL Stickman Fight API is running."})
+  
 @app.route("/api/ablation", methods=["GET"])
 def get_ablation():
     return jsonify(ablation)
