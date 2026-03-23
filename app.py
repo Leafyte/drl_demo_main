@@ -23,7 +23,8 @@ app = Flask(__name__)
 CORS(app)
 @app.route("/")
 def serve_index():
-    return send_from_directory(".", "index.html")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    return send_from_directory(base_dir, "index.html")
 # ─────────────────────────────────────────────
 #  CONFIG
 # ─────────────────────────────────────────────
